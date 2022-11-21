@@ -24,7 +24,7 @@ if (currentMinutes >= 9) {
 function newdata(response) {
   let newcityname = response.data.name;
   let showthecity = document.querySelector("#current_place");
-  showthecity.innerHTML = "📍 " + newcityname;
+  showthecity.innerHTML = newcityname;
   let citytemp = Math.round(response.data.main.temp);
   let showtemp = document.querySelector("#temperature");
   showtemp.innerHTML = citytemp + "°";
