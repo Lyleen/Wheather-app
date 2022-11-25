@@ -20,38 +20,47 @@
        <div id="frame">
 
         <div class="fav">
-              <ul>
+              <ul id="shortcut">
                 <li>Montreal</li>
                 <li>Tokyo</li>
                 <li>London</li>
               </ul>
-              <form id="countryform">
+        </div>
+
+        <form id="countryform">
                 <input type="name" id="cityname" placeholder="Search"> 
                 <input type="submit" value="🔎" id="searchbutton">
                 <button id="positionbutton"> 📍 </button>
-              </form>
-              <div id="now">  
-                <p id="current_day">  </p>
-              </div>
-       
-       <h1 id="current_place"> City </h1>
-       
-
-        <div id="current">
-                  ☀ 
-            <h2 id="current-temp">
-               <div id="temperature">0°</div>
-                <a href="" id="celcius">C</a>
-                 | 
-                <a href="" id="farh">F</a> 
-            </h2>
+        </form>
+        
+        <div id="now">  
+                <p id="current_day">  </p>      
+               <h1 id="current_place"> City </h1>
         </div>
-<br>
-      <div class="row">
+
+        <div class="row" id="current">
+          <div class="col" id="now-global">
+              <div id="now-description">sunny</div>
+              <div id="now-emoji" > ☀ </div> 
+          </div>
+            <div class="col" id="current-temp">
+               <span id="temperature">0° </span>
+                <a href="" id="celcius">C</a> 
+                <a href="" id="farh">F</a> 
+            </div>
+            <div class="col" id="wh">
+              <ul>
+                <li id="wind"> Wind </li>
+                <li id="humidity"> Humidity</li>
+              </ul>
+            </div>
+        </div>
+
+      <div class="row" id="previsions">
         <div class="col">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">Mnd</h5>
+            <h2 class="card-title">Mnd</h2>
             <p class="card-text">
               <i class="fa-solid fa-cloud-sun-rain"></i>
             </p>
@@ -65,7 +74,7 @@
         <div class="col">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">Tue</h5>
+            <h2 class="card-title">Tue</h2>
             <p class="card-text">
               <i class="fa-solid fa-cloud-sun"></i>
             </p>
@@ -79,7 +88,7 @@
         <div class="col">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">Wed</h5>
+            <h2 class="card-title">Wed</h2>
             <p class="card-text">
               <i class="fa-solid fa-cloud-sun-rain"></i>
             </p>
@@ -93,7 +102,7 @@
         <div class="col">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">Thu</h5>
+            <h2 class="card-title">Thu</h2>
             <p class="card-text">
               <i class="fa-solid fa-sun"></i>
             </p>
@@ -107,7 +116,7 @@
         <div class="col">
         <div class="card">
         <div class="card-body">
-            <h2 class="card-title">Fri</h5>
+            <h2 class="card-title">Fri</h2>
             <p class="card-text">
               <i class="fa-solid fa-cloud-rain"></i>
             </p>
@@ -120,7 +129,6 @@
         
         </div>
 
-      </div>
     </div>
     </div>
     </div>

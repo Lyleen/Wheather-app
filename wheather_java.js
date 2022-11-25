@@ -28,6 +28,12 @@ function newdata(response) {
   let citytemp = Math.round(response.data.main.temp);
   let showtemp = document.querySelector("#temperature");
   showtemp.innerHTML = citytemp + "°";
+  let citywind = response.data.wind.speed;
+  let showind = document.querySelector("#wind");
+  showind.innerHTML = `Wind : ${citywind} km/h`;
+  let cityhum = response.data.main.humidity;
+  let showhumd = document.querySelector("#humidity");
+  showhumd.innerHTML = `Humidity : ${cityhum} `;
 }
 function loadingdata(event) {
   event.preventDefault();
@@ -60,4 +66,10 @@ function Loadnewdataposition(response) {
   let temperature = Math.round(response.data.main.temp);
   let currenttemp = document.querySelector("#temperature");
   currenttemp.innerHTML = temperature + "°";
+  let citywnd = response.data.wind.speed;
+  let displaywind = document.querySelector("#wind");
+  displaywind.innerHTML = `Wind : ${citywnd} km/h`;
+  let cityhumid = response.data.main.humidity;
+  let displayhumd = document.querySelector("#humidity");
+  showhumd.innerHTML = `Humidity : ${cityhumid} `;
 }
