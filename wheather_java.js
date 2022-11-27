@@ -38,11 +38,8 @@ function newdata(response) {
   let descr = response.data.condition.description;
   let newdescr = document.querySelector("#description");
   newdescr.innerHTML = descr;
-  let emoji = document.querySelector("emoji");
-  emoji.setAttribute(
-    "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon_url}.png`
-  );
+  let emoji = document.querySelector("#emoji");
+  emoji.setAttribute("src", response.data.condition.icon_url);
   emoji.setAttribute("alt", response.data.condition.description);
 }
 let urlcity = `https://api.shecodes.io/weather/v1/current?query=Honolulu&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
@@ -90,6 +87,7 @@ function TheCurrentPosition(position) {
   axios.get(urlloc).then(Loadnewdataposition);
 }
 function Loadnewdataposition(response) {
+  console.log(response);
   let currentcityname = response.data.city;
   let showthecurrentcity = document.querySelector("#current_place");
   showthecurrentcity.innerHTML = "📍 " + currentcityname;
@@ -101,5 +99,8 @@ function Loadnewdataposition(response) {
   displaywind.innerHTML = `Wind : ${citywnd} km/h`;
   let cityhumid = response.data.temperature.humidity;
   let displayhumd = document.querySelector("#humidity");
-  showhumd.innerHTML = `Humidity : ${cityhumid} %`;
+  displayhumd.innerHTML = `Humidity : ${cityhumid} %`;
+  let emoji = document.querySelector("#emoji");
+  emoji.setAttribute("src", response.data.condition.icon_url);
+  emoji.setAttribute("alt", response.data.condition.description);
 }

@@ -1,3 +1,6 @@
+.container {
+  max-width: 680px;
+}
 #frame {
   border: solid 3px;
   padding: 35px;
@@ -8,43 +11,6 @@
   border-radius: 93px 102px 94px 90px;
   padding: 20% 0%;
   margin: 0px 1px;
-}
-#emoji {
-  font-size: 50px;
-}
-#description {
-  text-transform: capitalize;
-  font-size: 15px;
-  position: relative;
-  left: 20%;
-  top: -8%;
-}
-#units {
-  position: relative;
-  top: -35%;
-  left: -5%;
-}
-#current {
-  margin: 7% 0% 0%;
-}
-#now-global {
-  display: inline;
-}
-#current-temp {
-  display: inline;
-}
-#wh {
-  display: inline;
-}
-#wh ul {
-  display: inline;
-}
-#wh li {
-  display: block;
-  text-decoration: none;
-}
-#temperature {
-  font-size: 70px;
 }
 i {
   font-size: 50px;
@@ -60,6 +26,7 @@ i {
   margin: -3% 10% 2% -5%;
   text-align: center;
   color: grey;
+  font-size: 20px;
 }
 #shortcut {
   list-style: none;
@@ -87,16 +54,52 @@ i {
 }
 
 #current_day {
-  font-size: 20px;
+  font-size: 21px;
   font-style: italic;
-  margin: 0% 5%;
+  margin: -1% 5%;
 }
 #current_place {
   position: relative;
-  left: 45%;
+  left: 50%;
+  top: 30px;
   text-align: center;
-  margin: -5% 45% -8% -15%;
-  font-size: 80px;
+  margin: -7% 45% -8% -15%;
+  font-size: 65px;
+}
+
+#emoji {
+  width: 240px;
+  position: relative;
+  top: 35px;
+  left: 15px;
+}
+#current-temp {
+  position: relative;
+  top: 100px;
+  left: 75px;
+}
+#temperature {
+  font-size: 115px;
+}
+#units {
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+#description {
+  text-transform: capitalize;
+  position: relative;
+  top: -230px;
+  right: 164px;
+  font-size: 20px;
+}
+#wh ul {
+  position: relative;
+  top: 125px;
+  list-style: none;
+  right: 10px;
+  display: inline;
+  font-size: 15px;
 }
 #prevision {
   margin: 0% 0%;
