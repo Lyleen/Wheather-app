@@ -58,7 +58,8 @@ thenewcity.addEventListener("submit", loadingdata);
 function farhenheit(event) {
   event.preventDefault();
   let targettemperature = document.querySelector("#temperature");
-  let farhenheit = (targettemperature * 9) / 5 + 32;
+  alert(targettemperature);
+  let farhenheit = (targettemperature.innerHTML * 9) / 5 + 32;
   temperature.innerHTML = Math.ceil(farhenheit);
 }
 

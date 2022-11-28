@@ -79,11 +79,11 @@ i {
 }
 #temperature {
   font-size: 115px;
+  margin: 0% -15%;
 }
 #units {
   position: relative;
-  top: -60px;
-  left: 150px;
+  top: -5px;
 }
 #description {
   text-transform: capitalize;
