@@ -61,22 +61,21 @@ i {
 #current_place {
   position: relative;
   left: 50%;
-  top: 30px;
-  text-align: center;
-  margin: -7% 45% -8% -15%;
-  font-size: 65px;
+  top: 50px;
+  margin: -7% 0% -9% -36%;
+  font-size: 60px;
 }
 
 #emoji {
   width: 240px;
   position: relative;
-  top: 35px;
+  top: 55px;
   left: 15px;
 }
 #current-temp {
   position: relative;
-  top: 100px;
-  left: 75px;
+  top: 110px;
+  left: 70px;
 }
 #temperature {
   font-size: 115px;
@@ -89,8 +88,8 @@ i {
 #description {
   text-transform: capitalize;
   position: relative;
-  top: -230px;
-  right: 164px;
+  text-align: left;
+  top: -250px;
   font-size: 20px;
 }
 #wh ul {
