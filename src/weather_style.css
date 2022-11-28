@@ -70,20 +70,21 @@ i {
   width: 240px;
   position: relative;
   top: 55px;
-  left: 15px;
+  left: 20px;
 }
 #current-temp {
   position: relative;
-  top: 110px;
-  left: 70px;
+  top: 140px;
+  left: 50px;
 }
 #temperature {
-  font-size: 115px;
-  margin: 0% -15%;
+  font-size: 100px;
+  margin: 0% -6%;
 }
 #units {
   position: relative;
   top: -5px;
+  font-size: 18px;
 }
 #description {
   text-transform: capitalize;
@@ -102,4 +103,12 @@ i {
 }
 #prevision {
   margin: 0% 0%;
+}
+#fahr {
+  text-decoration: none;
+  color: #0d6efd;
+}
+#celcius {
+  text-decoration: none;
+  color: #0d6efd;
 }

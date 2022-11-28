@@ -26,9 +26,10 @@ function newdata(response) {
   let newcityname = response.data.city;
   let showthecity = document.querySelector("#current_place");
   showthecity.innerHTML = newcityname;
-  let citytemp = Math.round(response.data.temperature.current);
   let showtemp = document.querySelector("#temperature");
-  showtemp.innerHTML = citytemp + "°";
+  celcius = response.data.temperature.current;
+  let citytemp = Math.round(celcius);
+  showtemp.innerHTML = citytemp;
   let citywind = response.data.wind.speed;
   let showind = document.querySelector("#wind");
   showind.innerHTML = `Wind : ${citywind} km/h`;
@@ -57,19 +58,22 @@ thenewcity.addEventListener("submit", loadingdata);
 //convertion temperature units
 function farhenheit(event) {
   event.preventDefault();
-  let targettemperature = document.querySelector("#temperature");
-  alert(targettemperature);
-  let farhenheit = (targettemperature.innerHTML * 9) / 5 + 32;
+  linkF = document.querySelector("#fahr");
+  linkC = document.querySelector("#celcius");
+  let farhenheit = (celcius * 9) / 5 + 32;
   temperature.innerHTML = Math.ceil(farhenheit);
+  linkF.style.color = "black";
+  linkC.style.color = "#0d6efd";
 }
-
 function celciuss(event) {
   event.preventDefault();
-  let targettemperature = document.querySelector("#temperature");
-  temperature.innerHTML = targettemperature;
+  linkC = document.querySelector("#celcius");
+  temperature.innerHTML = Math.round(celcius);
+  linkC.style.color = "black";
+  linkF.style.color = "#0d6efd";
 }
 
-let clickonF = document.querySelector("#farh");
+let clickonF = document.querySelector("#fahr");
 clickonF.addEventListener("click", farhenheit);
 let clickonC = document.querySelector("#celcius");
 clickonC.addEventListener("click", celciuss);
