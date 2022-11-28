@@ -110,5 +110,9 @@ i {
 }
 #celcius {
   text-decoration: none;
-  color: #0d6efd;
+  color: black;
+}
+#sign {
+  margin: 0% 28%;
+  font-size: smaller;
 }
