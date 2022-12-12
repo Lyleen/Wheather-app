@@ -102,7 +102,7 @@ function loadcityname1() {
 }
 function loadcityname2() {
   let urlname = `https://api.shecodes.io/weather/v1/current?query=${shortcut2.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
-  let forecastshortcut2 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let forecastshortcut2 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut2.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
   shortcut1.style.color = "var(--bs-link-color)";
   shortcut2.style.color = "black";
   shortcut3.style.color = "var(--bs-link-color)";
@@ -111,7 +111,7 @@ function loadcityname2() {
 }
 function loadcityname3() {
   let urlname = `https://api.shecodes.io/weather/v1/current?query=${shortcut3.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
-  let forecastshortcut3 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let forecastshortcut3 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut3.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
   shortcut1.style.color = "var(--bs-link-color)";
   shortcut2.style.color = "var(--bs-link-color)";
   shortcut3.style.color = "black";

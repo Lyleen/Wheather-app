@@ -1,3 +1,12 @@
+#frame {
+  background: linear-gradient(
+    #c5e2ef,
+    #f3ffe9,
+    rgb(250, 252, 246),
+    #f3ffe9,
+    #9dc0c5
+  );
+}
 .container {
   max-width: 680px;
 }
@@ -69,7 +78,7 @@ i {
   width: 240px;
   position: relative;
   top: 55px;
-  left: 20px;
+  pointer-events: none;
 }
 #current-temp {
   position: relative;
@@ -78,7 +87,6 @@ i {
 }
 #temperature {
   font-size: 100px;
-  margin: 0% -6%;
 }
 #units {
   position: relative;
@@ -129,6 +137,9 @@ i {
   border-radius: 5% 5% 5% 5%;
   padding: 0% 0%;
   margin: 0px 0px;
+  background: radial-gradient(ellipse at top, #e8f4fc, transparent),
+    radial-gradient(ellipse at right, #e8ebe0, transparent),
+    radial-gradient(ellipse at left, #d9e3f1, transparent);
 }
 .shortcut {
   font-style: italic;
