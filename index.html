@@ -4,141 +4,70 @@
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://kit.fontawesome.com/ac4f388fd7.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/ac4f388fd7.js"
+      crossorigin="anonymous"
+    ></script>
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-    crossorigin="anonymous"/>  
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="src/weather_style.css" />
-
-
   </head>
 
   <body>
     <div class="container">
-       <div id="frame">
-
+      <div id="frame">
         <div class="fav">
-              <ul id="shortcut">
-                <li>Montreal</li>
-                <li>Tokyo</li>
-                <li>London</li>
-              </ul>
+          <ul id="shortcut">
+            <li>Montreal</li>
+            <li>Tokyo</li>
+            <li>London</li>
+          </ul>
         </div>
 
         <form id="countryform">
-                <input type="name" id="cityname" placeholder="Search"> 
-                <input type="submit" value="🔎" id="searchbutton">
-                <button id="positionbutton"> 📍 </button>
+          <input type="name" id="cityname" placeholder="Search" />
+          <input type="submit" value="🔎" id="searchbutton" />
+          <button id="positionbutton">📍</button>
         </form>
-        
-        <div id="now">  
-                <p id="current_day">  </p>      
-               <h1 id="current_place"> </h1>
+
+        <div id="now">
+          <p id="current_day"></p>
+          <h1 id="current_place"></h1>
         </div>
 
         <div class="row" id="current">
           <div class="col" id="current-temp">
-               <span id="temperature"> </span>
-                <span id="units">
-                  <a href="#" id="celcius">°C </a> |
-                  <a href="#" id="fahr"> °F </a>
-                </span>
+            <span id="temperature"> </span>
+            <span id="units">
+              <a href="#" id="celcius">°C </a> |
+              <a href="#" id="fahr"> °F </a>
+            </span>
           </div>
           <div class="col" id="now-global">
-              <div><img src="" alt=""  id="emoji"/>  </div>
-          <div id="description"><em></em></div> 
+            <div><img src="" alt="" id="emoji" /></div>
+            <div id="description"><em></em></div>
           </div>
-          
+
           <div class="col" id="wh">
-              <ul>
-                <li id="wind"> Wind </li>
-                <li id="humidity"> Humidity</li>
-              </ul>
+            <ul>
+              <li id="wind">Wind</li>
+              <li id="humidity">Humidity</li>
+            </ul>
           </div>
         </div>
 
-      <div class="row" id="previsions">
-        <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Mnd</h2>
-            <p class="card-text">
-              <i class="fa-solid fa-cloud-sun-rain"></i>
-            </p>
-            <p class="card-text">
-              <small class="text-muted">15°C / 25°C</small>
-            </p>
-          </div>
-        </div>
-        </div>
-
-        <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Tue</h2>
-            <p class="card-text">
-              <i class="fa-solid fa-cloud-sun"></i>
-            </p>
-            <p class="card-text">
-              <small class="text-muted">15°C / 25°C</small>
-            </p>
-          </div>
-        </div>
-        </div>
-
-        <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Wed</h2>
-            <p class="card-text">
-              <i class="fa-solid fa-cloud-sun-rain"></i>
-            </p>
-            <p class="card-text">
-              <small class="text-muted">15°C / 25°C</small>
-            </p>
-          </div>
-        </div>
-        </div>
-
-        <div class="col">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Thu</h2>
-            <p class="card-text">
-              <i class="fa-solid fa-sun"></i>
-            </p>
-            <p class="card-text">
-              <small class="text-muted">15°C / 25°C</small>
-            </p>
-          </div>
-        </div>
-        </div>
-
-        <div class="col">
-        <div class="card">
-        <div class="card-body">
-            <h2 class="card-title">Fri</h2>
-            <p class="card-text">
-              <i class="fa-solid fa-cloud-rain"></i>
-            </p>
-            <p class="card-text">
-              <small class="text-muted">15°C / 25°C</small>
-            </p>
-          </div>
-        </div>
-        </div>
-        
-        </div>
-
+        <div class="weather_forecast" id="previsions"></div>
+      </div>
     </div>
-    </div>
-    </div>
+
     <div id="sign">
-      <a href="https://github.com/Lyleen/Wheather-app"> Open-source code</a> <em>by Kathleen Cocodeau</em>
+      <a href="https://github.com/Lyleen/Wheather-app"> Open-source code</a>
+      <em>by Kathleen Cocodeau</em>
     </div>
-<script src="wheather_java.js"></script>
+    <script src="wheather_java.js"></script>
   </body>
-
 </html>

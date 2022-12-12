@@ -49,7 +49,9 @@ axios.get(urlcity).then(newdata);
 function loadingdata(event) {
   event.preventDefault();
   let urlcity = `https://api.shecodes.io/weather/v1/current?query=${inputcity.value}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let urlcityforecast = `https://api.shecodes.io/weather/v1/forecast?query=${inputcity.value}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
   axios.get(urlcity).then(newdata);
+  axios.get(urlcityforecast).then(displayforecast);
 }
 let inputcity = document.querySelector("#cityname");
 let thenewcity = document.querySelector("#countryform");
@@ -89,13 +91,15 @@ function TheCurrentPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let urlloc = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let urllocforecast = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
   axios.get(urlloc).then(Loadnewdataposition);
+  axios.get(urllocforecast).then(displayforecast);
 }
 function Loadnewdataposition(response) {
   console.log(response);
   let currentcityname = response.data.city;
   let showthecurrentcity = document.querySelector("#current_place");
-  showthecurrentcity.innerHTML = "📍 " + currentcityname;
+  showthecurrentcity.innerHTML = `📍 ${currentcityname}`;
   let temperature = Math.round(response.data.temperature.current);
   let currenttemp = document.querySelector("#temperature");
   currenttemp.innerHTML = temperature + "°";
@@ -109,3 +113,46 @@ function Loadnewdataposition(response) {
   emoji.setAttribute("src", response.data.condition.icon_url);
   emoji.setAttribute("alt", response.data.condition.description);
 }
+
+//Forecast
+function formatdate(time) {
+  let date = new Date(time * 1000);
+  let day = date.getDay();
+  let displaydays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return displaydays[day];
+}
+
+function displayforecast(response) {
+  console.log(response);
+  let forecast = response.data.daily;
+  let prev = document.querySelector("#previsions");
+  let htmlprev = `<div class="row">`;
+  forecast.forEach(function (array, index) {
+    if (index == 1 || (index > 1 && index <= 5)) {
+      console.log(index);
+      htmlprev += `  
+  <div class="col-auto">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">${formatdate(array.time)}</h2>
+            <p class="card-text">
+            <img src=" ${array.condition.icon_url}"/>
+            </p>
+            <p class="card-text">
+              <small class="font-weight-bold"><strong>${Math.round(
+                array.temperature.minimum
+              )}°C</strong></small> |
+              <small class="text-muted"> ${Math.round(
+                array.temperature.maximum
+              )}°C </small>
+            </p>
+          </div>
+        </div>
+        </div>`;
+    }
+  });
+  htmlprev += `</div>`;
+  prev.innerHTML = htmlprev;
+}
+let urlforecast = `https://api.shecodes.io/weather/v1/forecast?query=Honolulu&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+axios.get(urlforecast).then(displayforecast);
