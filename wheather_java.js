@@ -44,7 +44,25 @@ function newdata(response) {
   let emoji = document.querySelector("#emoji");
   emoji.setAttribute("src", response.data.condition.icon_url);
   emoji.setAttribute("alt", response.data.condition.description);
+  let icon = response.data.condition.icon;
+  let background = document.querySelector("#frame");
+  if (icon.search("day") === -1) {
+    background.style.background = `linear-gradient(
+    rgb(146, 148, 200),
+    #d5b39e,
+    #dddda1,
+    #9fa8c4,
+    #231f47)`;
+  } else {
+    background.style.background = `linear-gradient(
+    #c5e2ef,
+    #f3ffe9,
+    rgb(250, 252, 246),
+    #f3ffe9,
+    #9dc0c5`;
+  }
 }
+
 let urlcity = `https://api.shecodes.io/weather/v1/current?query=Honolulu&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
 axios.get(urlcity).then(newdata);
 

@@ -7,6 +7,7 @@
     #9dc0c5
   );
 }
+
 .container {
   max-width: 680px;
 }
@@ -137,9 +138,9 @@ i {
   border-radius: 5% 5% 5% 5%;
   padding: 0% 0%;
   margin: 0px 0px;
-  background: radial-gradient(ellipse at top, #e8f4fc, transparent),
-    radial-gradient(ellipse at right, #e8ebe0, transparent),
-    radial-gradient(ellipse at left, #d9e3f1, transparent);
+  background: radial-gradient(ellipse at top, #f9f1e7, transparent),
+    radial-gradient(ellipse at right, #e0e6eb, transparent),
+    radial-gradient(ellipse at left, #d9dbf1, transparent);
 }
 .shortcut {
   font-style: italic;
