@@ -12,12 +12,14 @@ let days = [
 let currentDay = days[now.getDay()];
 let currentHour = now.getHours();
 let currentMinutes = now.getMinutes();
+let currentdate = now.getDate();
+let currentMonth = now.getMonth() + 1;
 
 let day = document.querySelector("#current_day");
 if (currentMinutes > 9) {
-  day.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
+  day.innerHTML = `${currentdate}/${currentMonth} ${currentDay} ${currentHour}:${currentMinutes}`;
 } else {
-  day.innerHTML = `${currentDay} ${currentHour}:0${currentMinutes}`;
+  day.innerHTML = `${currentdate}/${currentMonth} ${currentDay} ${currentHour}:0${currentMinutes}`;
 }
 
 //load input the city & it's temp
@@ -80,6 +82,43 @@ clickonF.addEventListener("click", farhenheit);
 let clickonC = document.querySelector("#celcius");
 clickonC.addEventListener("click", celciuss);
 
+//shortcuts
+let shortcut1 = document.querySelector("#Montreal");
+shortcut1.addEventListener("click", loadcityname1);
+let shortcut2 = document.querySelector("#Tokyo");
+shortcut2.addEventListener("click", loadcityname2);
+let shortcut3 = document.querySelector("#London");
+shortcut3.addEventListener("click", loadcityname3);
+
+function loadcityname1() {
+  let urlname = `https://api.shecodes.io/weather/v1/current?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let forecastshortcut1 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  shortcut1.style.color = "black";
+  shortcut2.style.color = "var(--bs-link-color)";
+  shortcut3.style.color = "var(--bs-link-color)";
+  shortcut1.style.decoration = "none";
+  axios.get(urlname).then(newdata);
+  axios.get(forecastshortcut1).then(displayforecast);
+}
+function loadcityname2() {
+  let urlname = `https://api.shecodes.io/weather/v1/current?query=${shortcut2.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let forecastshortcut2 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  shortcut1.style.color = "var(--bs-link-color)";
+  shortcut2.style.color = "black";
+  shortcut3.style.color = "var(--bs-link-color)";
+  axios.get(urlname).then(newdata);
+  axios.get(forecastshortcut2).then(displayforecast);
+}
+function loadcityname3() {
+  let urlname = `https://api.shecodes.io/weather/v1/current?query=${shortcut3.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  let forecastshortcut3 = `https://api.shecodes.io/weather/v1/forecast?query=${shortcut1.innerHTML}&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
+  shortcut1.style.color = "var(--bs-link-color)";
+  shortcut2.style.color = "var(--bs-link-color)";
+  shortcut3.style.color = "black";
+  axios.get(urlname).then(newdata);
+  axios.get(forecastshortcut3).then(displayforecast);
+}
+
 //load currentposition data
 let showcurrentcityname = document.querySelector("#positionbutton");
 showcurrentcityname.addEventListener("click", launch);
@@ -129,7 +168,6 @@ function displayforecast(response) {
   let htmlprev = `<div class="row">`;
   forecast.forEach(function (array, index) {
     if (index == 1 || (index > 1 && index <= 5)) {
-      console.log(index);
       htmlprev += `  
   <div class="col-auto">
         <div class="card">

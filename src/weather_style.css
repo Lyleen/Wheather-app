@@ -35,7 +35,6 @@ i {
 .fav li {
   display: inline;
   margin: 0 25px;
-  text-decoration: underline;
 }
 
 #searchbutton {
@@ -54,7 +53,7 @@ i {
 }
 
 #current_day {
-  font-size: 21px;
+  font-size: 18px;
   font-style: italic;
   margin: -1% 5%;
 }
@@ -89,7 +88,7 @@ i {
 #description {
   text-transform: capitalize;
   position: relative;
-  text-align: left;
+  left: 100px;
   top: -250px;
   font-size: 20px;
 }
@@ -130,4 +129,7 @@ i {
   border-radius: 5% 5% 5% 5%;
   padding: 0% 0%;
   margin: 0px 0px;
+}
+.shortcut {
+  font-style: italic;
 }
