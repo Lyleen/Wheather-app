@@ -116,6 +116,9 @@ i {
 #celcius {
   text-decoration: none;
 }
+.active {
+  color: black;
+}
 #sign {
   margin: 0% 28%;
   font-size: smaller;

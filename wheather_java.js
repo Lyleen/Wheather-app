@@ -61,6 +61,8 @@ function newdata(response) {
     #f3ffe9,
     #9dc0c5`;
   }
+  linkC.classList.add("active");
+  linkF.classList.remove("active");
 }
 
 let urlcity = `https://api.shecodes.io/weather/v1/current?query=Honolulu&key=tfc5b1174a6eb0eo33d062c2b145a43f&units=metric`;
@@ -84,8 +86,8 @@ function farhenheit(event) {
   linkC = document.querySelector("#celcius");
   let farhenheit = (celcius * 9) / 5 + 32;
   temperature.innerHTML = Math.ceil(farhenheit);
-  linkF.classList.add("active");
   linkC.classList.remove("active");
+  linkF.classList.add("active");
 }
 function celciuss(event) {
   event.preventDefault();
@@ -93,10 +95,7 @@ function celciuss(event) {
   temperature.innerHTML = Math.round(celcius);
   linkC.classList.add("active");
   linkF.classList.remove("active");
-  linkC.setAttribute("disabled", true);
-  linkF.removeAttribute("disabled");
 }
-
 let clickonF = document.querySelector("#fahr");
 clickonF.addEventListener("click", farhenheit);
 let clickonC = document.querySelector("#celcius");
